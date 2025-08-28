@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Participant.css"; // our CSS file
 
+// Dummy data (for local dev / testing)
 const dummyResponse = {
   studentList: [
     {
@@ -51,6 +52,8 @@ const dummyResponse = {
   ],
 };
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ParticipantList() {
   const [participants, setParticipants] = useState([]);
   const [selectedHouse, setSelectedHouse] = useState("All");
@@ -58,9 +61,18 @@ export default function ParticipantList() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
+    // 🔹 Using dummyResponse for now
     setParticipants(dummyResponse.studentList);
+
+    /*
+    fetch(`${API_URL}/getstudents`)
+      .then((res) => res.json())
+      .then((data) => setParticipants(data.studentList || []))
+      .catch((err) => console.error("Fetch error:", err));
+    */
   }, []);
 
+  // Filtering logic
   const filteredParticipants = participants.filter((p) => {
     const matchesHouse = selectedHouse === "All" || p.house === selectedHouse;
     const matchesYear = selectedYear === "All" || p.courseYear === selectedYear;
@@ -71,6 +83,7 @@ export default function ParticipantList() {
     return matchesHouse && matchesYear && matchesSearch;
   });
 
+  // Unique dropdown values
   const uniqueHouses = ["All", ...new Set(participants.map((p) => p.house))];
   const uniqueYears = ["All", ...new Set(participants.map((p) => p.courseYear))];
 
@@ -78,6 +91,7 @@ export default function ParticipantList() {
     <div className="container">
       <h1 className="title">ESA FESTIVAL</h1>
 
+      {/* Filters */}
       <div className="filters">
         <span className="filter-label">Filters</span>
 
@@ -111,6 +125,7 @@ export default function ParticipantList() {
         </select>
       </div>
 
+      {/* List */}
       <div className="list">
         {filteredParticipants.length > 0 ? (
           filteredParticipants.map((p) => (
