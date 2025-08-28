@@ -2,55 +2,55 @@ import React, { useEffect, useState } from "react";
 import "./Participant.css"; // our CSS file
 
 // Dummy data (for local dev / testing)
-const dummyResponse = {
-  studentList: [
-    {
-      _id: "68b0518a9797e9f7758c3d88",
-      studentId: "202355904",
-      fullName: "John Moises",
-      courseYear: "BSCOE 21M1",
-      house: "makakalikasan",
-      backendDate: "2025-08-28",
-      noAttend: 1,
-    },
-    {
-      _id: "68b05bcf13247b040d478f15",
-      studentId: "202412345",
-      fullName: "Maria Lopez",
-      courseYear: "BSIT 22A2",
-      house: "makabansa",
-      backendDate: "2025-08-28",
-      noAttend: 1,
-    },
-    {
-      _id: "68b05bea13247b040d478f16",
-      studentId: "202398765",
-      fullName: "Carlos Reyes",
-      courseYear: "BSCS 21B1",
-      house: "makatao",
-      backendDate: "2025-08-28",
-      noAttend: 1,
-    },
-    {
-      _id: "68b05bf313247b040d478f17",
-      studentId: "202376543",
-      fullName: "Angela Santos",
-      courseYear: "BSEE 23C1",
-      house: "makakalikasan",
-      backendDate: "2025-09-02",
-      noAttend: 1,
-    },
-    {
-      _id: "68b05bfe13247b040d478f18",
-      studentId: "202354321",
-      fullName: "Sophia Gonzales",
-      courseYear: "BSARCH 24D1",
-      house: "makatao",
-      backendDate: "2025-09-05",
-      noAttend: 1,
-    },
-  ],
-};
+// const dummyResponse = {
+//   studentList: [
+//     {
+//       _id: "68b0518a9797e9f7758c3d88",
+//       studentId: "202355904",
+//       fullName: "John Moises",
+//       courseYear: "BSCOE 21M1",
+//       house: "makakalikasan",
+//       backendDate: "2025-08-28",
+//       noAttend: 1,
+//     },
+//     {
+//       _id: "68b05bcf13247b040d478f15",
+//       studentId: "202412345",
+//       fullName: "Maria Lopez",
+//       courseYear: "BSIT 22A2",
+//       house: "makabansa",
+//       backendDate: "2025-08-28",
+//       noAttend: 1,
+//     },
+//     {
+//       _id: "68b05bea13247b040d478f16",
+//       studentId: "202398765",
+//       fullName: "Carlos Reyes",
+//       courseYear: "BSCS 21B1",
+//       house: "makatao",
+//       backendDate: "2025-08-28",
+//       noAttend: 1,
+//     },
+//     {
+//       _id: "68b05bf313247b040d478f17",
+//       studentId: "202376543",
+//       fullName: "Angela Santos",
+//       courseYear: "BSEE 23C1",
+//       house: "makakalikasan",
+//       backendDate: "2025-09-02",
+//       noAttend: 1,
+//     },
+//     {
+//       _id: "68b05bfe13247b040d478f18",
+//       studentId: "202354321",
+//       fullName: "Sophia Gonzales",
+//       courseYear: "BSARCH 24D1",
+//       house: "makatao",
+//       backendDate: "2025-09-05",
+//       noAttend: 1,
+//     },
+//   ],
+// };
 
 const API_URL = import.meta.env.VITE_API_URL;
 

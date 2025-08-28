@@ -2,7 +2,6 @@ import { connectDB } from "../lib/db.js";
 import { postData, getStudent } from "../lib/middleware.js";
 
 export default async function handler(req, res) {
-  // 🔹 CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -29,3 +28,4 @@ export default async function handler(req, res) {
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
+
