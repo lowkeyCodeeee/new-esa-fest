@@ -1,6 +1,5 @@
 
-// import { connectDB } from "../lib/db.js";
-
+import { connectDB } from "../lib/db.js";
 
 // import { getAllStudents } from "../lib/middleware";
 const uri = process.env.MONGO_CONNECTION_STRING;
