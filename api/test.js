@@ -15,6 +15,6 @@ export default async function test(req, res) {
         res.status(200).json({ studentList: students });
       } catch (err) {
         console.error("❌ Error in getstudents:", err); // 🔹 log full error
-        res.status(500).json({ message: err.message }); // 🔹 return real error message
+        res.status(500).json({db :'Error in connecting database mongodb',  message: err.message }); // 🔹 return real error message
       }
 }
