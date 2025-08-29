@@ -24,8 +24,10 @@ export default async function handler(req, res) {
       data: updatedStudent,
     });
   } catch (err) {
-    console.error("Post data error:", err);
-    res.status(500).json({ message: "Internal Server Error" });
+   console.error("Post data error:", err);
+  res.status(500).json({ message: err.message });
   }
 }
 
+
+// to do tommorow working in production
