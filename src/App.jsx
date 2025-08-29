@@ -52,7 +52,9 @@ import "./Participant.css"; // our CSS file
 //   ],
 // };
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
+
+const url = 'https://new-esa-fest.vercel.app/api/';
 
 export default function ParticipantList() {
   const [participants, setParticipants] = useState([]);
@@ -64,11 +66,14 @@ export default function ParticipantList() {
     // 🔹 Using dummyResponse for now
     // setParticipants(dummyResponse.studentList);
 
-    fetch(`${API_URL}getstudents`)
+    fetch(`${url}getstudents`)
       .then((res) => res.json())
       .then((data) => setParticipants(data.studentList || []))
       .catch((err) => console.error("Fetch error:", err));
   }, []);
+
+
+  
 
   // Filtering logic
   const filteredParticipants = participants.filter((p) => {
