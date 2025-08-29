@@ -64,7 +64,7 @@ export default function ParticipantList() {
     // 🔹 Using dummyResponse for now
     // setParticipants(dummyResponse.studentList);
 
-    fetch(`${API_URL}/getstudents`)
+    fetch(`${API_URL}getstudents`)
       .then((res) => res.json())
       .then((data) => setParticipants(data.studentList || []))
       .catch((err) => console.error("Fetch error:", err));
