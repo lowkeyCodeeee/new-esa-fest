@@ -9,12 +9,13 @@ export default async function test(req, res) {
         res.status(200).json({status : 'ok', message : 'hello world', uri});
     }
 
-    try {
-        const db = await connectDB();
-        const students = await getAllStudents(db);
-        res.status(200).json({ studentList: students });
-      } catch (err) {
-        console.error("❌ Error in getstudents:", err); // 🔹 log full error
-        res.status(500).json({db :'Error in connecting database mongodb',  message: err.message }); // 🔹 return real error message
-      }
+    res.status(400).json({msg : 'Bad request'});
+    // try {
+    //     const db = await connectDB();
+    //     const students = await getAllStudents(db);
+    //     res.status(200).json({ studentList: students });
+    //   } catch (err) {
+    //     console.error("❌ Error in getstudents:", err); // 🔹 log full error
+    //     res.status(500).json({db :'Error in connecting database mongodb',  message: err.message }); // 🔹 return real error message
+    //   }
 }
